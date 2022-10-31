@@ -10,12 +10,13 @@ import {
   Keyboard,
 } from 'react-native';
 
-function AddTodo() {
+function AddTodo({onInsert}) {
   const [text, setText] = useState('');
 
   const onPress = () => {
+    onInsert(text);
     setText('');
-    Keyboard.dismiss();
+    Keyboard.dismiss(); // 현재 나타난 키보드 닫음
   };
 
   const button = (
@@ -30,8 +31,8 @@ function AddTodo() {
         style={styles.input}
         value={text}
         onChangeText={setText}
-        onSubmitEditing={onPress}
-        returnKeyType="done"
+        onSubmitEditing={onPress} // Enter를 눌렀을 때 호출되는 함수
+        returnKeyType="done" // Enter 타입을 지정
       />
       {Platform.select({
         ios: (
@@ -72,7 +73,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     width: 48,
     height: 48,
-    backgroundColor: '#26a69a',
+    backgroundColor: '#9292D8',
     borderRadius: 24,
   },
 });

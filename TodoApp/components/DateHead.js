@@ -10,7 +10,7 @@ function DateHead({date}) {
 
   return (
     <>
-      <StatusBar backgroundColor="#26a69a" />
+      <StatusBar backgroundColor="#9292D8" />
       <View style={styles.block}>
         <Text style={styles.dateText}>{formatted}</Text>
       </View>
@@ -21,7 +21,7 @@ function DateHead({date}) {
 const styles = StyleSheet.create({
   block: {
     padding: 16,
-    backgroundColor: '#26a69a',
+    backgroundColor: '#9292D8',
   },
   dateText: {
     fontSize: 24,
